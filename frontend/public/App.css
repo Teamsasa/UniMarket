@@ -20,7 +20,7 @@ header h1 {
 
 .search-bar {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
 }
 
@@ -54,7 +54,7 @@ header h1 {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px;
-  width: calc(20% - 20px); /* 5つの商品を1行に表示 */
+  width: calc(20% - 20px); /* 4つの商品を1行に表示 */
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* 画像がコンテナをはみ出さないようにする */
@@ -124,4 +124,11 @@ button.sell:hover {
   width: 45%; /* 適切なサイズに調整 */
   height: auto;
   margin: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  color: white;
 }

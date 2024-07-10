@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   console.log('Header render');
   return (
     <header className="header">
-      <div className="logo">Uni Market</div>
+      <Link to="/" className="logo">Uni Market</Link>
       <div className="search-bar">
         <input type="text" placeholder="何をお探しですか？" />
-        <button>検索</button>
+        <button className="search-bar">検索</button>
       </div>
       <div className="button-group">
         <button className="login">ログイン</button>
