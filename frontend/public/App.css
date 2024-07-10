@@ -118,3 +118,10 @@ button.register:hover {
 button.sell:hover {
   background-color: #e0a800;
 }
+
+/* ProductDetail.css など適切なCSSファイルに追加 */
+.product-detail .product-image {
+  width: 45%; /* 適切なサイズに調整 */
+  height: auto;
+  margin: 20px;
+}
