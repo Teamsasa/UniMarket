@@ -6,19 +6,38 @@ const products: Product[] = [
   {
     id: 1,
     name: "Product 1",
-    image:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcocreco.kodansha.co.jp%2Fcocreco%2Fgeneral%2Flife%2FgRUhC&psig=AOvVaw3oUgDWLm18BlBNIAK-j0Gn&ust=1720496863653000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJit4rrElocDFQAAAAAdAAAAABAE",
+    image: require("./images/product1.jpeg").default,
     price: 1000,
     description: "Description 1",
   },
   {
     id: 2,
     name: "Product 2",
-    image: "url2",
+    image: require("./images/product2.jpg").default,
     price: 2000,
     description: "Description 2",
   },
-  // 追加の商品データ
+  {
+    id: 3,
+    name: "Product 3",
+    image: require("./images/product3.jpg").default,
+    price: 3000,
+    description: "Description 3",
+  },
+  {
+    id: 4,
+    name: "Product 4",
+    image: require("./images/product4.jpg").default,
+    price: 4000,
+    description: "Description 4",
+  },
+  {
+    id: 5,
+    name: "Product 5",
+    image: require("./images/product5.jpg").default,
+    price: 5000,
+    description: "Description 5",
+  },
 ];
 
 type ProductListProps = {
@@ -26,7 +45,6 @@ type ProductListProps = {
 };
 
 const ProductList: React.FC<ProductListProps> = ({ onProductClick }) => {
-  console.log("ProductList render");
   return (
     <div className="product-list">
       {products.map((product) => (

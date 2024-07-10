@@ -2,10 +2,13 @@ import React from "react";
 import { Product } from "../types";
 
 type ProductDetailProps = {
-  product: Product;
+  product: Product | null;
 };
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
+  if (!product) {
+    return <div>商品が見つかりません。</div>;
+  }
   return (
     <div className="product-detail">
       <h1>{product.name}</h1>
