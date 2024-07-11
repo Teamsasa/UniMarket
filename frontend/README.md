@@ -2,6 +2,11 @@
 ```
 npm install
 ```
+server.jsがあるディレクトリで
+```
+node server.js
+```
+を実行。その後
 
 ```
 npm start
