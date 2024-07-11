@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 type Message = {
+  id: number;
   sender: string;
   content: string;
 };
@@ -29,9 +30,8 @@ const Chat: React.FC = () => {
 
   const handleSendMessage = () => {
     if (ws && input.trim()) {
-      const message: Message = { sender: 'User', content: input };
+      const message = { sender: 'User', content: input };
       ws.send(JSON.stringify(message));
-      setMessages((prevMessages) => [...prevMessages, message]);
       setInput('');
     }
   };
@@ -39,8 +39,8 @@ const Chat: React.FC = () => {
   return (
     <div className="chat">
       <div className="messages">
-        {messages.map((msg, index) => (
-          <div key={index} className="message">
+        {messages.map((msg) => (
+          <div key={msg.id} className="message">
             <strong>{msg.sender}:</strong> {msg.content}
           </div>
         ))}
@@ -50,6 +50,11 @@ const Chat: React.FC = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Type your message"
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            handleSendMessage();
+          }
+        }}
       />
       <button onClick={handleSendMessage}>Send</button>
     </div>
