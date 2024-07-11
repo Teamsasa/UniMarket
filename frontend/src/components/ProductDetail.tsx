@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Product } from "../types";
 
 type ProductDetailProps = {
@@ -6,9 +7,12 @@ type ProductDetailProps = {
 };
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
+  const { productId } = useParams<{ productId: string }>();
+
   if (!product) {
-    return <div>商品が見つかりません。</div>;
+    return <div>Product not found</div>;
   }
+
   return (
     <div className="product-detail">
       <h1>{product.name}</h1>

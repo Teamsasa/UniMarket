@@ -4,7 +4,7 @@ import Header from "@components/Header";
 import ProductList from "@components/ProductList";
 import ProductDetail from "@components/ProductDetail";
 import { Product } from "./types";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
   console.log("App component rendered");
@@ -14,11 +14,8 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-       {selectedProduct ? (
-          <Route path="/" element={<ProductDetail product={selectedProduct} />} />
-        ) : (
-          <Route path="/" element={<ProductList onProductClick={setSelectedProduct} />} />
-        )}
+        <Route path="/" element={<ProductList onProductClick={setSelectedProduct} />} />
+        <Route path="/product/:productId" element={<ProductDetail product={selectedProduct} />} />
       </Routes>
     </Router>
   );
@@ -30,7 +27,7 @@ if (container) {
   const root = ReactDOM.createRoot(container);
   root.render(
     <React.StrictMode>
-        <App />
+      <App />
     </React.StrictMode>
   );
 } else {

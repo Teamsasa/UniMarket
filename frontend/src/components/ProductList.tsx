@@ -1,6 +1,7 @@
 import React from "react";
 import ProductItem from "./ProductItem";
 import { Product } from "../types";
+import { useNavigate } from "react-router-dom";
 
 const products: Product[] = [
   {
@@ -45,13 +46,20 @@ type ProductListProps = {
 };
 
 const ProductList: React.FC<ProductListProps> = ({ onProductClick }) => {
+  const navigate = useNavigate();
+
+  const handleProductClick = (product: Product) => {
+    onProductClick(product);
+    navigate(`/product/${product.id}`);
+  };
+
   return (
     <div className="product-list">
       {products.map((product) => (
         <ProductItem
           key={product.id}
           product={product}
-          onClick={() => onProductClick(product)}
+          onClick={() => handleProductClick(product)}
         />
       ))}
     </div>
