@@ -13,8 +13,12 @@ const Chat: React.FC = () => {
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:8080');
     socket.onmessage = (event) => {
-      const newMessage: Message = JSON.parse(event.data);
-      setMessages((prevMessages) => [...prevMessages, newMessage]);
+      const parsedMessage = JSON.parse(event.data);
+      if (parsedMessage.type === 'history') {
+        setMessages(parsedMessage.data);
+      } else if (parsedMessage.type === 'message') {
+        setMessages((prevMessages) => [...prevMessages, parsedMessage.data]);
+      }
     };
     setWs(socket);
 
