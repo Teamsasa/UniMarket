@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../types";
+import Chat from "./Chat";
 
 type ProductDetailProps = {
   product: Product | null;
@@ -19,9 +20,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
       <img className="product-image" src={product.image} alt={product.name} />
       <p>価格: ¥{product.price}</p>
       <p>{product.description}</p>
-      {/* 出品者情報とトーク画面をここに追加 */}
+      {/* チャットコンポーネントを追加 */}
+      <Chat />
     </div>
   );
 };
+
 
 export default ProductDetail;
