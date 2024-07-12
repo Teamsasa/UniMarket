@@ -132,3 +132,18 @@ button.sell:hover {
   margin: 10px;
   color: white;
 }
+
+.purchase-section {
+  margin-left: 20px;
+}
+
+.purchase-button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #ff75ca;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
