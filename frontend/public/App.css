@@ -12,6 +12,10 @@ header {
   color: #fff;
   padding: 15px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
@@ -47,6 +51,7 @@ header h1 {
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
+  padding-top: 80px; /* ヘッダーの高さ分の余白を追加 */
 }
 
 .product-item {
@@ -84,6 +89,13 @@ header h1 {
   margin: 10px 0;
 }
 
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  color: white;
+}
+
 button.login, button.register, button.sell {
   margin: 0 5px;
   padding: 10px 20px;
@@ -119,21 +131,36 @@ button.sell:hover {
   background-color: #e0a800;
 }
 
-/* ProductDetail.css など適切なCSSファイルに追加 */
-.product-detail .product-image {
-  width: 45%; /* 適切なサイズに調整 */
-  height: auto;
-  margin: 20px;
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 80px; /* ヘッダーの高さ分の余白を追加 */
 }
 
-.logo {
-  width: 100px;
+.product-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 50%;
   height: auto;
-  margin: 10px;
-  color: white;
+  margin-bottom: 20px;
 }
 
 .purchase-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-left: 20px;
 }
 
@@ -146,4 +173,15 @@ button.sell:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.purchase-button:hover {
+  background-color: #e066b3;
+}
+
+.chat {
+  margin-top: 20px;
+  width: 50%;
 }

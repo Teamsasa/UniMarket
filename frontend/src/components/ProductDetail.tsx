@@ -18,15 +18,16 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     <div className="product-detail">
       <div className="product-info">
         <h1>{product.name}</h1>
-        <img className="product-image" src={product.image} alt={product.name} />
+        <span className="product-content">
+          <img className="product-image" src={product.image} alt={product.name} />
+          <span className="purchase-section">
+            <button className="purchase-button">購入</button>
+            <Chat />
+          </span>
+        </span>
         <p>価格: ¥{product.price}</p>
         <p>{product.description}</p>
       </div>
-      <div className="purchase-section">
-        <button className="purchase-button">購入</button>
-      </div>
-      {/* チャットコンポーネントを追加 */}
-      <Chat />
     </div>
   );
 };
