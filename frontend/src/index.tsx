@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import Header from "@components/Header";
 import ProductList from "@components/ProductList";
 import ProductDetail from "@components/ProductDetail";
+import Login from "@components/Login";
+import Register from "@components/Register";
 import { Product } from "./types";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -16,6 +18,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<ProductList onProductClick={setSelectedProduct} />} />
         <Route path="/product/:productId" element={<ProductDetail product={selectedProduct} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

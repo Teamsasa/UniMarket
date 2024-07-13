@@ -97,9 +97,9 @@ const Header: React.FC = () => {
         <button className="search-button" onClick={handleSearch}>検索</button>
       </div>
       <div className="button-group">
-        <button className="login" onClick={handleLogin}>ログイン</button>
-        <button className="register" onClick={handleRegister}>会員登録</button>
-        <button className="sell" onClick={handleSell}>出品</button>
+        <Link to="/login" className="login-button">ログイン</Link>
+        <Link to="/register" className="register-button">会員登録</Link>
+        <Link to="/sell" className="sell-button">出品</Link>
       </div>
     </header>
   );
