@@ -194,8 +194,8 @@ button.sell:hover {
 
 .purchased-overlay {
   position: absolute;
-  top: 80px;
-  right: 10px;
+  top: 120px;
+  right: 25px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   width: 40%;

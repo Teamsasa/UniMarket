@@ -21,7 +21,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   return (
     <div className="product-detail">
       <div className="product-content">
-        <div className="product-info" style={{ backgroundColor: purchased ? 'red' : 'initial' }}>
+        <div className={`product-info ${purchased ? 'purchased' : ''}`}>
           <h1>{product.name}</h1>
           <img className="product-image" src={product.image} alt={product.name} />
           <h3 className="product-price">¥{product.price.toLocaleString()}</h3>
