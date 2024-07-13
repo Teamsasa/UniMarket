@@ -8,10 +8,10 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* 中央揃えにする */
   background-color: #333;
   color: #fff;
   padding: 15px;
-  text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -24,7 +24,7 @@ header h1 {
 
 .search-bar {
   display: flex;
-  align-items: left;
+  align-items: center; /* 中央揃えにする */
   justify-content: flex-start;
 }
 
@@ -34,7 +34,7 @@ header h1 {
   width: 60%;
 }
 
-.search-bar button {
+.search-button {
   padding: 10px;
   background-color: #ff0000;
   color: white;
@@ -42,7 +42,7 @@ header h1 {
   cursor: pointer;
 }
 
-.search-bar button:hover {
+.search-button:hover {
   background-color: #cc0000;
 }
 
@@ -90,14 +90,16 @@ header h1 {
 }
 
 .logo {
-  width: 100px;
-  height: auto;
-  margin: 10px;
   color: white;
+  text-decoration: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px; /* ボタン間のスペースを追加 */
 }
 
 button.login, button.register, button.sell {
-  margin: 0 5px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -174,7 +176,7 @@ button.sell:hover {
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 20px;
-  width: 50%;
+  width: 100%;
 }
 
 .purchase-button:hover {
@@ -183,5 +185,35 @@ button.sell:hover {
 
 .chat {
   margin-top: 20px;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.messages {
+  max-height: 400px; /* メッセージ表示エリアの高さを指定 */
+  overflow-y: auto; /* スクロールを有効にする */
+  margin-bottom: 20px; /* メッセージエリアの下に余白を追加 */
+}
+
+.chat-input-section {
+  display: flex;
+  width: 100%;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
 }

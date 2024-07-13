@@ -45,18 +45,21 @@ const Chat: React.FC = () => {
           </div>
         ))}
       </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Type your message"
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            handleSendMessage();
-          }
-        }}
-      />
-      <button onClick={handleSendMessage}>Send</button>
+      <div className="chat-input-section">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type your message"
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              handleSendMessage();
+            }
+          }}
+          className="chat-input"
+        />
+        <button onClick={handleSendMessage} className="send-button">Send</button>
+      </div>
     </div>
   );
 };

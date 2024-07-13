@@ -8,7 +8,7 @@ const Header: React.FC = () => {
       <Link to="/" className="logo">Uni Market</Link>
       <div className="search-bar">
         <input type="text" placeholder="何をお探しですか？" />
-        <button className="search-bar">検索</button>
+        <button className="search-button">検索</button>
       </div>
       <div className="button-group">
         <button className="login">ログイン</button>
