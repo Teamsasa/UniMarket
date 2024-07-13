@@ -50,7 +50,7 @@ const Chat: React.FC = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message"
+          placeholder="メッセージを入力してください"
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
               handleSendMessage();
@@ -58,7 +58,7 @@ const Chat: React.FC = () => {
           }}
           className="chat-input"
         />
-        <button onClick={handleSendMessage} className="send-button">Send</button>
+        <button onClick={handleSendMessage} className="send-button">送信</button>
       </div>
     </div>
   );

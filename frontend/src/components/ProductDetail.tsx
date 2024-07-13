@@ -16,18 +16,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
 
   return (
     <div className="product-detail">
-      <div className="product-info">
-        <h1>{product.name}</h1>
-        <span className="product-content">
+      <div className="product-content">
+        <div className="product-info">
+          <h1>{product.name}</h1>
           <img className="product-image" src={product.image} alt={product.name} />
-          <span className="purchase-section">
-            <button className="purchase-button">購入</button>
-            <Chat />
-          </span>
-        </span>
-        <p>価格: ¥{product.price}</p>
-        <p>{product.description}</p>
+          <p className="product-price">¥{product.price.toLocaleString()}</p>
+          <p className="product-description">{product.description}</p>
+        </div>
+        <div className="purchase-section">
+          <button className="purchase-button">購入</button>
+        </div>
       </div>
+      <Chat />
     </div>
   );
 };
