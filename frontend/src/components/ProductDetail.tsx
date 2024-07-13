@@ -20,7 +20,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         <div className="product-info">
           <h1>{product.name}</h1>
           <img className="product-image" src={product.image} alt={product.name} />
-          <p className="product-price">¥{product.price.toLocaleString()}</p>
+          <h3 className="product-price">¥{product.price.toLocaleString()}</h3>
           <p className="product-description">{product.description}</p>
         </div>
         <div className="purchase-section">
