@@ -97,12 +97,12 @@ const Header: React.FC = () => {
         <button className="search-button" onClick={handleSearch}>検索</button>
       </div>
       <div className="button-group">
-        <Link to="/login" className="login-button">ログイン</Link>
-        <Link to="/register" className="register-button">会員登録</Link>
-        <Link to="/sell" className="sell-button">出品</Link>
+        <Link to="/login" className="button login-button">ログイン</Link>
+        <Link to="/register" className="button register-button">会員登録</Link>
+        <Link to="/sell" className="button sell-button">出品</Link>
       </div>
     </header>
-  );
+  );  
 };
 
 export default Header;

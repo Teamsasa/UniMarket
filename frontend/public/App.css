@@ -104,40 +104,41 @@ header h1 {
   flex-shrink: 0; /* ボタングループが縮小しないようにする */
 }
 
-button.login, button.register, button.sell {
+.button {
+  display: inline-block;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  white-space: nowrap; /* ボタンのテキストが折り返さないようにする */
+  text-align: center;
+  text-decoration: none;
+  color: white;
 }
 
-login-button {
+.login-button {
   background-color: #007bff;
-  color: white;
 }
 
-button.register {
+.register-button {
   background-color: #28a745;
-  color: white;
 }
 
-button.sell {
+.sell-button {
   background-color: #ffc107;
-  color: white;
 }
 
-button.login:hover {
+.login-button:hover {
   background-color: #0056b3;
 }
 
-button.register:hover {
+.register-button:hover {
   background-color: #218838;
 }
 
-button.sell:hover {
+.sell-button:hover {
   background-color: #e0a800;
 }
+
 
 /* 以下の部分は変更なし */
 .product-detail {
