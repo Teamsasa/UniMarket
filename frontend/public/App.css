@@ -112,7 +112,7 @@ button.login, button.register, button.sell {
   white-space: nowrap; /* ボタンのテキストが折り返さないようにする */
 }
 
-button.login {
+login-button {
   background-color: #007bff;
   color: white;
 }
@@ -194,21 +194,14 @@ button.sell:hover {
 
 .purchased-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 80px;
+  right: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 100%;
+  width: 40%;
   text-align: center;
   padding: 10px;
   font-size: 1.2em;
-}
-
-.purchased .product-name,
-.purchased .product-price,
-.purchased .product-description {
-  background-color: red;
-  color: white;
 }
 
 .chat {
