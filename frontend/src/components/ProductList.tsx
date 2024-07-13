@@ -6,17 +6,17 @@ import { useNavigate } from "react-router-dom";
 const products: Product[] = [
   {
     id: 1,
-    name: "Product 1",
+    name: "物理学科 環境保全 過去レポート",
     image: require("./images/product1.jpeg").default,
-    price: 1000,
-    description: "Description 1",
+    price: 500,
+    description: "第12回授業においての過去レポートの書き方の授業資料です。実際の過去レポートもあります。",
   },
   {
     id: 2,
-    name: "Product 2",
+    name: "化学科 化学A 期末テスト",
     image: require("./images/product2.jpg").default,
-    price: 2000,
-    description: "Description 2",
+    price: 700,
+    description: "美齊津先生の前期期末テストの問題と解答です。\n字が書いてあり汚いので、少しであれば値下げの対応も可能です。",
   },
   {
     id: 3,
