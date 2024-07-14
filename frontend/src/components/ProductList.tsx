@@ -3,6 +3,8 @@ import ProductItem from "./ProductItem";
 import { Product } from "../types";
 import { useNavigate } from "react-router-dom";
 
+import { api_url } from "../index";
+
 type ProductListProps = {
   onProductClick: (product: Product) => void;
 };
@@ -17,7 +19,7 @@ const ProductList: React.FC<ProductListProps> = ({ onProductClick }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:8080/getProducts', {
+      const response = await fetch( api_url + "/getProducts", {
         method: 'GET',
         credentials: 'include',
         headers: {

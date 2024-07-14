@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import {api_url} from '../index';
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -7,7 +9,12 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {//正しいパスを指定する
+      // リクエストオブジェクトを作成
+      var request = new Request(api_url + "/signin", {
+        credentials: 'include',
+      });
+
+      const response = await fetch( request, {//正しいパスを指定する
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -17,11 +24,15 @@ const Login: React.FC = () => {
       if (!response.ok) {
         throw new Error('Login failed');
       }
-      const data = await response.json();
-      console.log('Login successful:', data);
+      // const data = await response.json();
+      // console.log('Login successful:', data);
+      console.log('Login successful:', response);
+      alert('ログインに成功しました');
       // ここでログイン後の処理を行う（例：ユーザー状態を更新する、リダイレクトするなど）
     } catch (error) {
+      alert('ログインに失敗しました');
       console.error('Error during login:', error);
+      console.log(JSON.stringify({ username, password }));
     }
   };
 
