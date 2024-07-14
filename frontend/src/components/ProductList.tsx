@@ -19,7 +19,7 @@ const ProductList: React.FC<ProductListProps> = ({ onProductClick }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch( api_url + "/getProducts", {
+      const response = await fetch( api_url + "/getProducts/", {
         method: 'GET',
         credentials: 'include',
         headers: {
