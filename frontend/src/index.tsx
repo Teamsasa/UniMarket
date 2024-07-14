@@ -27,6 +27,8 @@ const App: React.FC = () => {
   );
 };
 
+export const api_url = "http://localhost:8080";
+
 const container = document.getElementById("root");
 if (container) {
   console.log("Container found");

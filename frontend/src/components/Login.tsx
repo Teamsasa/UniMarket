@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import {api_url} from '../index';
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -7,7 +9,7 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {//正しいパスを指定する
+      const response = await fetch( api_url + "/signin", {//正しいパスを指定する
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
