@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch( api_url + "/getProducts?="+searchQuery, {
+      const response = await fetch( api_url + "/getProducts/" + searchQuery, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
