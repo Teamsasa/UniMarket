@@ -65,25 +65,6 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleSell = async () => {
-    try {
-      const response = await fetch('/api/sell', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch sell page data');
-      }
-      const data = await response.json();
-      console.log('Sell page data:', data);
-      // ここで出品ページのデータを処理します（例：出品フォームを表示する、必要なデータを設定するなど）
-    } catch (error) {
-      console.error('Error fetching sell page data:', error);
-    }
-  };
-
   return (
     <header className="header">
       <Link to="/" className="logo">Uni Market</Link>
@@ -99,7 +80,7 @@ const Header: React.FC = () => {
       <div className="button-group">
         <Link to="/login" className="button login-button">ログイン</Link>
         <Link to="/register" className="button register-button">会員登録</Link>
-        <Link to="/sell" className="button sell-button">出品</Link>
+        <Link to="/upload" className="button sell-button">出品</Link>
       </div>
     </header>
   );  

@@ -5,6 +5,7 @@ import ProductList from "@components/ProductList";
 import ProductDetail from "@components/ProductDetail";
 import Login from "@components/Login";
 import Register from "@components/Register";
+import Upload from "@components/UploadImage";
 import { Product } from "./types";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/product/:productId" element={<ProductDetail product={selectedProduct} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/upload" element={<Upload />} />
       </Routes>
     </Router>
   );
